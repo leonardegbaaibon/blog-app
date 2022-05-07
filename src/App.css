@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}     
+.Header{
+  text-align: left;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar{
+  color: rgb(250, 173, 58);
+  text-align:  center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-nav{
+  width: 70%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2%;
+  border: 1px solid rgb(201, 227, 250);
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  justify-content: space-around;
+}
+.nav-div{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.link-div a{
+  text-decoration: none;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding: 5%;
+  color: rgb(250, 173, 58);
+  background-color: rgb(223, 237, 250);
+  border-radius: 10%;
+  text-align: center;
+
+}
+.link-div a:hover{
+  background-color: rgb(250, 173, 58);
   color: white;
+  transition: 0.5s;
 }
-
-.App-link {
-  color: #61dafb;
+.link-div .home-link{
+  width: 30%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link-div .blog-link{
+  width: 70%;
+}
+.link-div{
+  width: 20ch;
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
+}
+.word-div{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.word-div h1{
+  width: 74%;
+}
+.Home div p{
+  font-weight: 300;
+  font-size: 25px;
+}
+.blog-preview{
+  color: rgb(250, 173, 58);
+  margin: 1%;
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.blog-preview:hover{
+  box-shadow: 3px 3px 2px 2px rgb(184, 183, 183);
+  transition: 0.5s;
+}
+.blog-preview p{
+  color: black;
 }
