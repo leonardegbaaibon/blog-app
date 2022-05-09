@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -84,12 +85,12 @@ code {
   color: rgb(250, 173, 58);
   margin: 1%;
   padding: 2%;
-  background-color: rgb(255, 255, 255);
   cursor: pointer;
+  background-color: gray;
 }
 .blog-preview:hover{
-  box-shadow: 3px 3px 2px 2px rgb(184, 183, 183);
-  transition: 0.5s;
+  box-shadow: 2px 2px 7px 7px  rgba(250, 173, 58, 0.582);
+  transition: 0.1s;
 }
 .blog-preview p{
   color: black;
