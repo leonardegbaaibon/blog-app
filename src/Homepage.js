@@ -4,54 +4,44 @@ import "./App.css";
 import Bloglist from "./Bloglist";
 
 const Homepage = () => {
-  const [blogs, setBlog] = useState([
-    {
-      title: "My Frontend Project",
-      body: "lorem ipsum...",
-      author: "Leonard",
-      id: 1,
-    },
-    {
-      title: "My Jaystore",
-      body: "lorem ipsum...",
-      author: "John",
-      id: 2,
-    },
-    {
-      title: "My Backend Project",
-      body: "lorem ipsum...",
-      author: "Chris",
-      id: 3,
-    },
-    {
-      title: "My React project" ,
-      body: "lorem ipsum...",
-      author: "Leonard",
-      id: 4,
-    },
-  ]);
+  const [blogs, setBlog] = useState(null);
+  const [isLoading, setisLoading] = useState(true)
+  const [isError, setisError] = useState(null)
 
-  const handelDelete = (id) => {
-      const newBlog = blogs.filter(blog => blog.id !== id);
-      setBlog(newBlog);
-  }
   useEffect(() => {
-      console.log('use effect ran');
-      console.log(blogs)
-  })
+        setTimeout(() => {
+            fetch('http://localhost:8000/blogs')
+            .then(res => {
+                console.log(res)
+                if(!res.ok){
+                   throw Error('Could not find the source boss');
+                }
+                return res.json()
+            })
+            .then(data => {
+                setBlog(data);
+                setisLoading(false);
+                setisError(null)
+            })
+            .catch(err => {
+                // console.log(err.message)
+                setisLoading(false);
+                setisError(err.message)
+            })
+        }, 1000);
+    //   console.log('use effect ran');
+  },[])
 
   const title = "All blogs!";
   //   const [myName, setMyname] = useState("John");
   //   const [myAge, setMyage] = useState(20);
 
-  const handleClick = () => {
-    // setMyname("Leonard");
-    // setMyage(18);
-  };
 
   return (
     <div className="Home">
-      <Bloglist blogs={blogs} title={title} handelDelete={handelDelete} />
+     {isError && <div>{isError}</div>}
+     {isLoading && <div>Loading</div>}
+     {blogs && <Bloglist blogs={blogs} title={title} />}
       {/* <Bloglist blogs={blogs.filter((blog) => blog.author === "Leonard")} title= "Leonard's Blog!"/> */}
     </div>
   );
